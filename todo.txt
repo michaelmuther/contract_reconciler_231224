@@ -1,0 +1,40 @@
+1 set up fake data - DONE
+  -contracts - DONE
+  -excel file list - DONE
+2 Define requirements - DONE
+3 Code the script
+  - dictionary of company number as key and Company object as value
+  - Input from excel file - data structure: Company class
+
+  string company_name
+  int company_number (redundant in the object as this will be the key?)
+  string contact_email_address
+  bool requires_ESA
+  bool requires_SEA
+  bool ESA_hard_copy_received
+  bool SEA_hard_copy_received
+  bool ESA_digital_copy_received
+  bool SEA_digital_copy_received
+
+  iterate over contract_data.xlsx and create each company object with the five parameters in the five columns:
+  company_name, company_number, requires_ESA, requires_SEA, contact_email_address
+
+  - Input from contracts folder - data structure: Same Company class
+  iterate over the files in the new_contracts_2024 folder
+  identify: 1) the company, 2) the type of contract (ESA, SEA), 3) the contract format (hard-copy, digital)
+  update the company object based on the company number.
+
+  Time complexity:
+  O(n) to iterate over companies in excel list
+  O(1) to update all data when object is created
+
+  O(n) to iterate over pdfs in the folder
+  O(1) to find the company in the dictionary and update each boolean for received copies
+
+  - Output - format?
+  Missing hard copy (not mailed, lost in mail, no intention of providing hard copy) send follow-up email
+  Missing digital and hard copy (not yet actioned, awaiting signature, wrong or outdated contact) send follow-up email
+
+4 Write README
+  -background of task
+  -research proper readme examples

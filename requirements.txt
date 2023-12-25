@@ -1,0 +1,26 @@
+Scenario: New contracts for an intercompany charing process need to signed and returned in hard copy format. There are two
+separate agreements, the SEA (Special Extra agreement) and the ESA (Extra Special Agreement). The gobal corporation
+has 26 companies participating in the charging scheme. Some companies send charges covered under only the ESA agreement,
+some under only the SEA agreement, and some under both. Each company has its own contact, typically the finance manager,
+that has been sent a copy(s) of the blank agreement(s). The instructions for each finance manager are to send hard
+copies by mail to the headquarters. When the hard copies are received, they will be scanned and put into a shared
+folder. Oftentimes, the contracts are signed and sent by email in a response to the request email. In this case, the
+digital copies are added to the same folder, but an underscore is added at the end of the filename to indicate that
+the hard copy has not been received and the .pdf contract within the shared folder is only available as a pdf. A common
+filename has been agreed to: "SEA_01" for the SEA agreement for company 01. For ESA, it is simply "ESA_01". If only
+a digital copy of the signed contract has been received, the file in the folder will be named "ESA_02_". The master list
+of participating companies with the type of new contracts that are needed is in a 5 column excel file named
+"contract_data". This file has company name, company number, columns for ESA and SEA and an 'X' if the contract is
+needed, and the email address of the contact.
+
+Requirements:
+Given the contract_data file and the folder containing the signed, returned contracts the script should:
+1 identify which contracts for which compaies are missing (digital and hard copy)
+2 identify which contracts have been recieved digitally, but are missing hard copies
+3 Make visible and transparent the status of the 2024 contract renewal project for stakeholders within the charging,
+management, and tax teams
+
+Extended requirements:
+4 prepare and send automated emails to send to the finance manager of each company where the signed contract is missing
+5 prepare and send automated emails to send to the finance manager of each company where only the hard copy is missing
+6 add received date to contract data within company object based on date modified in folder
