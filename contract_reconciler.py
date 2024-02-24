@@ -42,11 +42,11 @@ class ContractReconciler:
 
         self.get_companies_from_data(data_path)
         self.print_companies()  # for testing
-        self.get_contracts_from_folder(contracts_path)
+        # self.get_contracts_from_folder(contracts_path)
         # self.print_contracts()  # for testing
-        self.add_contract_data_to_companies()
-        print('AFTER---------')
-        self.print_companies()  # for testing
+        # self.add_contract_data_to_companies()
+        # print('AFTER---------')
+        # self.print_companies()  # for testing
         # self.output_data(output_path)
 
     def get_companies_from_data(self, data_path):
@@ -95,18 +95,17 @@ class ContractReconciler:
                 self.companies[contract.company_number].sea_hard_copy_received = not contract.digital_only
                 self.companies[contract.company_number].sea_digital_copy_received = True
 
-    def reconcile_companies_and_contracts(self):
-        # self.companies_missing_signed_ESA_contract = []
-        # self.companies_missing_signed_SEA_contract = []
-        # self.companies_missing_only_ESA_hard_copy = []
-        # self.companies_missing_only_SEA_hard_copy = []
-        for number, company in self.companies.items():
-            if company.esa_required:
-                if not company.esa_hard_copy_received and not company.esa_digital_copy_received:
-                    self.companies_missing_signed_ESA_contract.append(number)
-                elif not company
-            if company.sea_required:
-
+    # def reconcile_companies_and_contracts(self):
+    #     # self.companies_missing_signed_ESA_contract = []
+    #     # self.companies_missing_signed_SEA_contract = []
+    #     # self.companies_missing_only_ESA_hard_copy = []
+    #     # self.companies_missing_only_SEA_hard_copy = []
+    #     for number, company in self.companies.items():
+    #         if company.esa_required:
+    #             if not company.esa_hard_copy_received and not company.esa_digital_copy_received:
+    #                 self.companies_missing_signed_ESA_contract.append(number)
+    #             elif not company
+    #         if company.sea_required:
 
     def output_data(self, output_path):
         pass
@@ -118,7 +117,7 @@ class ContractReconciler:
             print(f'SEA Required: {value.sea_required}  Hard-copy: {value.sea_hard_copy_received}  Digital-copy: {value.sea_digital_copy_received}\n')
 
     def print_contracts(self):
-        for contract in sorted(self.contracts_in_folder, key=lambda contract: contract.company_number):
+        for contract in sorted(self.contracts_in_folder, key=lambda c: c.company_number):
             print(contract)
 
 

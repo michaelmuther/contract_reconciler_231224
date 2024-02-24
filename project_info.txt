@@ -21,6 +21,6 @@ Given the contract_data file and the folder containing the signed, returned cont
 management, and tax teams
 
 Extended requirements:
-4 prepare and send automated emails to send to the finance manager of each company where the signed contract is missing
-5 prepare and send automated emails to send to the finance manager of each company where only the hard copy is missing
+4 prepare automated emails to send to the finance manager of each company where the signed contract is missing
+5 prepare automated emails to send to the finance manager of each company where only the hard copy is missing
 6 add received date to contract data within company object based on date modified in folder
